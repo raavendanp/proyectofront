@@ -17,12 +17,12 @@ def measure(request):
         if Longitud and Codigo and Latitud and Area:
             # Crea el json para realizar la petición POST al Web Service
             args = {'Codigo': Codigo, 'Longitud': Longitud, 'Latitud': Latitud, 'Producto':Producto, 'Area': Area}
-            response = requests.post('https://p1bkend.azurewebsites.net/', args)
+            response = requests.post('https://p1bkend.azurewebsites.net/measures/', args)
             # Convierte la respuesta en JSON
             measure_json = response.json()
 
     # Realiza una petición GET al Web Services
-    response = requests.get('https://p1bkend.azurewebsites.net/')
+    response = requests.get('https://p1bkend.azurewebsites.net/measures/')
     # Convierte la respuesta en JSON
     measures = response.json()
     # Rederiza la respuesta en el template measure
