@@ -1,0 +1,28 @@
+{% extends 'measure/base.html' %}
+{% block content %}
+<div class="container">
+    <form method="get">
+        
+        <input Codigo="number" name="Codigo" placeholder = "Codigo">
+        <input Longitud="Longitud" name="Longitud" placeholder = "Longitud">
+        <input Latitud="Latitud" name="Latitud" placeholder = "Latitud">
+        <input Area ="Area" name="Area" placeholder = "Area">
+        <select Producto = 'Producto' name = 'Producto'>
+            <option Producto = "" disabled selected> --Producto-- </option> 
+            <option Producto = "Carne" > Carne </option> 
+            <option Producto = "Leche" > Leche </option> 
+            <option Producto = "Cacao" > Cacaco </option> 
+            <option Producto = "Leche" > Flores </option> 
+            <option Producto = "Cacao" > Hortalizas </option> 
+        </select> 
+        
+        <button Codigo ="submit">Adicionar</button>
+    </form>
+    {% for measure in measures %}
+    <ul class="list-group">
+        <li class="list-group-item">Codigo = {{measure.Codigo}}  || Longitud = {{measure.Longitud}} || Latitud = {{measure.Latitud}} || Producto = {{measure.Producto}} || Area = {{measure.Area}}</li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
+ 
